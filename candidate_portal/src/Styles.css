@@ -1,0 +1,103 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.styled-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-assign {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-save {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-assign:hover, .btn-save:hover {
+    opacity: 0.8;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal .btn-save {
+    width: 100%;
+}

@@ -1,0 +1,90 @@
+.recruiter-panel {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .recruiter-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .recruiter-table th,
+  .recruiter-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .recruiter-table th {
+    background: #007bff;
+    color: white;
+  }
+  
+  .recruiter-table td {
+    color: #333;
+  }
+  
+  .comment-input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: black;
+  }
+  
+  .comment-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comment-item {
+    background: #f1f1f1;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  .save-btn,
+  .comment-btn {
+    padding: 8px 12px;
+    border: none;
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 5px;
+  }
+  
+  .save-btn:hover {
+    background: #218838;
+  }
+  
+  .comment-btn {
+    background: #17a2b8;
+  }
+  
+  .comment-btn:hover {
+    background: #138496;
+  }
+  
+  .recruiter-dropdown {
+    width: 90%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+}
+  
