@@ -1,14 +1,11 @@
-# Candidate-Portal
+# Candidate Portal - Assessment Project
 
-## 📌 Overview
-The **Candidate Portal** is a web-based platform that allows candidates to upload their resumes, HR to manage applications, and recruiters to handle assignments. The system is built using **React.js** for the frontend, **Flask (Python)** for the backend, and **MySQL** as the database.
+This project is a **Candidate Portal** built with React (frontend) and Python Flask (backend), with MySQL as the database. This is an assessment project for interview purposes.
 
----
-
-## 🏗️ Project Structure
+## 📂 Project Structure
 ```
 assessment_last
-  ├── candidate_portal  # Frontend (React.js)
+  ├── candidate_portal (Frontend - React)
       ├── node_modules
       ├── public
       ├── src
@@ -30,16 +27,13 @@ assessment_last
       ├── package.json
       ├── README.md
       ├── vite.config.js
-  ├── database  # MySQL database script
-      ├── recruitment_db.sql
-  ├── server.py  # Backend (Flask)
-  ├── README.md
+  ├── server.py (Backend - Flask)
+  ├── database.sql (MySQL Database Schema)
 ```
 
 ---
 
-## 🚀 Installation Guide
-Follow these steps to set up the project on your local machine.
+## 🚀 How to Set Up and Run
 
 ### 1️⃣ Clone the Repository
 ```sh
@@ -47,111 +41,64 @@ git clone https://github.com/tamilselvan0910/Candidate-Portal.git
 cd Candidate-Portal
 ```
 
-### 2️⃣ Setup the MySQL Database
-#### 🔹 Open MySQL and create the database:
+### 2️⃣ Set Up the Database (MySQL)
+#### a) Open MySQL and create the database
 ```sql
 CREATE DATABASE recruitment_db;
-```
-
-#### 🔹 Import the database schema:
-```sh
-mysql -u root -p recruitment_db < database/recruitment_db.sql
-```
-
-#### 🔹 Verify the tables are created:
-```sql
 USE recruitment_db;
-SHOW TABLES;
+```
+#### b) Import the database schema
+```sh
+mysql -u root -p recruitment_db < database.sql
 ```
 
----
-
-### 3️⃣ Start the Backend (Flask API)
-#### 🔹 Install dependencies:
+### 3️⃣ Run the Backend (Flask)
+#### a) Install dependencies
 ```sh
 pip install flask flask-cors mysql-connector-python
 ```
-
-#### 🔹 Run the server:
+#### b) Start the Flask server
 ```sh
 python server.py
 ```
 
-> The Flask server should now be running on **http://localhost:5000**
-
----
-
-### 4️⃣ Start the Frontend (React.js)
-#### 🔹 Navigate to the frontend folder:
+### 4️⃣ Run the Frontend (React)
+#### a) Navigate to frontend directory
 ```sh
 cd candidate_portal
 ```
-
-#### 🔹 Install dependencies:
+#### b) Install dependencies
 ```sh
 npm install
 ```
-
-#### 🔹 Run the React app:
+#### c) Start the frontend server
 ```sh
 npm run dev
 ```
 
-> The React application should now be running on **http://localhost:5173**
+---
+
+## 🔥 Features
+✅ Candidate can upload files
+✅ HR Panel for candidate management
+✅ Recruiter Panel for reviewing applications
+✅ MySQL database for storing candidate data
 
 ---
 
-## 📌 API Endpoints
-### 🔹 Upload Candidate Data
-**Endpoint:** `POST /upload`
-- **Description:** Uploads candidate name and file.
-- **Request Body:** `multipart/form-data`
-- **Response:** `JSON`
-
-### 🔹 Get All Candidates
-**Endpoint:** `GET /candidates`
-- **Description:** Fetches all candidates from the database.
-- **Response:** `JSON`
-
-### 🔹 Assign Recruiters
-**Endpoint:** `POST /assign`
-- **Description:** Assigns recruiters to a candidate.
-- **Request Body:** `{ candidate_id, recruiter1, recruiter2, recruiter3, comments }`
-- **Response:** `JSON`
+## ⚠️ Disclaimer
+This project is developed for **interview assessment purposes only**. No licensing is required.
 
 ---
 
-## 📌 Technologies Used
-- **Frontend:** React.js, Vite, Bootstrap
-- **Backend:** Flask (Python)
-- **Database:** MySQL
+## 🤝 Contributing
+Since this is an assessment project, contributions are **not required**.
 
 ---
 
 ## 🛠️ Troubleshooting
-### 🔹 Error: "Module not found"
-Run `npm install` again inside `candidate_portal`.
+- If you face MySQL connection issues, check **server.py** and update `mysql.connector.connect` with your credentials.
+- Ensure MySQL is running and the `recruitment_db` is properly created.
+- If any package is missing, reinstall dependencies using `npm install` or `pip install`.
 
-### 🔹 Flask server crashes on startup
-Check if MySQL is running and the database exists using:
-```sql
-SHOW DATABASES;
-```
-
----
-
-## 🎯 Contributing
-Feel free to **fork** the repository and submit pull requests for improvements.
-
----
-
-## 📜 License
-This project is open-source and available under the **MIT License**.
-
----
-
-## ✨ Author
-**Tamilselvan P**
-- [GitHub](https://github.com/tamilselvan0910)
-- [LinkedIn](https://www.linkedin.com/in/tamilselvan-p-39b43b200/)
-
+Happy coding! 🚀
