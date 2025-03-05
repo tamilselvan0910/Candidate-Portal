@@ -54,24 +54,35 @@ def assign_recruiters():
     candidate_id = data.get("candidate_id")
     recruiters = data.get("recruiters", [])
 
-    if not candidate_id or len(recruiters) != 3:
-        return jsonify({"error": "Candidate ID and exactly 3 recruiters are required"}), 400
+    if not candidate_id or len(recruiters) == 0:
+        return jsonify({"error": "Candidate ID and at least 1 recruiter are required"}), 400
+
+    # Fill missing recruiters with None
+    recruiters += [None] * (3 - len(recruiters))
 
     # Check if recruiters are already assigned
     cursor.execute("SELECT * FROM recruiter_assignments WHERE candidate_id = %s", (candidate_id,))
     existing_assignment = cursor.fetchone()
 
     if existing_assignment:
-        return jsonify({"alert": "Recruiters are already assigned for this candidate!"}), 400
+        # If recruiters exist, update them
+        sql = """
+            UPDATE recruiter_assignments 
+            SET recruiter1 = %s, recruiter2 = %s, recruiter3 = %s 
+            WHERE candidate_id = %s
+        """
+        cursor.execute(sql, (*recruiters, candidate_id))
+    else:
+        # Otherwise, insert new record
+        sql = """
+            INSERT INTO recruiter_assignments (candidate_id, recruiter1, recruiter2, recruiter3)
+            VALUES (%s, %s, %s, %s)
+        """
+        cursor.execute(sql, (candidate_id, *recruiters))
 
-    sql = """
-        INSERT INTO recruiter_assignments (candidate_id, recruiter1, recruiter2, recruiter3)
-        VALUES (%s, %s, %s, %s)
-    """
-    cursor.execute(sql, (candidate_id, *recruiters))
     db.commit()
-
     return jsonify({"message": "Recruiters assigned successfully!"})
+
 
 
 # ---------------------- API: Fetch Candidates with Recruiters ----------------------
